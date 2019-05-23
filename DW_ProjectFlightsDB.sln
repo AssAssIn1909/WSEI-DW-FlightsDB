@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28917.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "FlightsDB-SSIS", "FlightsDB-SSIS\FlightsDB-SSIS.dtproj", "{0FFE4155-AF6D-4EFD-A583-CFD93B2A8F52}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "FlightsDB", "FlightsDB\FlightsDB.sqlproj", "{81E5ED95-A807-4EA7-B9B2-ACC9E9836384}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Development|Any CPU = Development|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0FFE4155-AF6D-4EFD-A583-CFD93B2A8F52}.Debug|Any CPU.ActiveCfg = Development
+		{0FFE4155-AF6D-4EFD-A583-CFD93B2A8F52}.Debug|Any CPU.Build.0 = Development
+		{0FFE4155-AF6D-4EFD-A583-CFD93B2A8F52}.Development|Any CPU.ActiveCfg = Development
+		{0FFE4155-AF6D-4EFD-A583-CFD93B2A8F52}.Development|Any CPU.Build.0 = Development
+		{0FFE4155-AF6D-4EFD-A583-CFD93B2A8F52}.Release|Any CPU.ActiveCfg = Development
+		{0FFE4155-AF6D-4EFD-A583-CFD93B2A8F52}.Release|Any CPU.Build.0 = Development
+		{81E5ED95-A807-4EA7-B9B2-ACC9E9836384}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81E5ED95-A807-4EA7-B9B2-ACC9E9836384}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81E5ED95-A807-4EA7-B9B2-ACC9E9836384}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{81E5ED95-A807-4EA7-B9B2-ACC9E9836384}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{81E5ED95-A807-4EA7-B9B2-ACC9E9836384}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{81E5ED95-A807-4EA7-B9B2-ACC9E9836384}.Development|Any CPU.Deploy.0 = Debug|Any CPU
+		{81E5ED95-A807-4EA7-B9B2-ACC9E9836384}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81E5ED95-A807-4EA7-B9B2-ACC9E9836384}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81E5ED95-A807-4EA7-B9B2-ACC9E9836384}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1EF048B4-85E9-419E-BE35-7CF8C015B354}
+	EndGlobalSection
+EndGlobal
