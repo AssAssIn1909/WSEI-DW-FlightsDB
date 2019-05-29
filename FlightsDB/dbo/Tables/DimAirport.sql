@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[DimAirport] (
-    [Id]      INT              NOT NULL,
+    [Id]      INT              NOT NULL IDENTITY(1,1),
     [Iata]    NVARCHAR (6)     NOT NULL,
     [Airport] NVARCHAR (43)    NULL,
     [City]    NVARCHAR (35)    NULL,

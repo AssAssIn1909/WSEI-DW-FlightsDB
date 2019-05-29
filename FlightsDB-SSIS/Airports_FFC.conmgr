@@ -1,0 +1,85 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Airports_FFC"
+  DTS:DTSID="{D24DCD6D-4D65-48CA-96AA-0C86D8CC78FC}"
+  DTS:CreationName="FLATFILE">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:Format="Delimited"
+      DTS:LocaleID="1033"
+      DTS:HeaderRowDelimiter="_x000D__x000A_"
+      DTS:ColumnNamesInFirstDataRow="True"
+      DTS:RowDelimiter=""
+      DTS:TextQualifier="_x003C_none_x003E_"
+      DTS:CodePage="1252"
+      DTS:ConnectionString="C:\Users\luki2\Documents\70767DataWarehouse\Lesson00 Projects\Project05 FlightsDB\airports.csv">
+      <DTS:FlatFileColumns>
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="6"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="&quot;iata&quot;"
+          DTS:DTSID="{50D31376-6788-4B12-A960-6A63F01734F5}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C__x0022_"
+          DTS:MaximumWidth="43"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="&quot;airport&quot;"
+          DTS:DTSID="{0504BFBE-0800-4B38-9941-D7B9BDCBBBE5}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x0022__x002C_"
+          DTS:MaximumWidth="35"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="&quot;city&quot;"
+          DTS:DTSID="{51CA2FCA-9F69-4ACA-83C5-ED4AF14F2BF7}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="13"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="&quot;state&quot;"
+          DTS:DTSID="{CD9F514B-C6A2-4E27-A1D4-D9B9278A1A97}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="32"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="&quot;country&quot;"
+          DTS:DTSID="{919CD35C-AEDA-4D24-A964-84EC2C4FB51A}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:DataType="131"
+          DTS:DataPrecision="14"
+          DTS:DataScale="10"
+          DTS:TextQualified="True"
+          DTS:ObjectName="&quot;lat&quot;"
+          DTS:DTSID="{D30E6C7A-1914-4E5E-923E-A1089BF24730}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x000D__x000A_"
+          DTS:DataType="131"
+          DTS:DataPrecision="14"
+          DTS:DataScale="10"
+          DTS:TextQualified="True"
+          DTS:ObjectName="&quot;long&quot;"
+          DTS:DTSID="{6FA2E9D1-E75C-4BFB-93CF-0E05B7D79367}"
+          DTS:CreationName="" />
+      </DTS:FlatFileColumns>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
