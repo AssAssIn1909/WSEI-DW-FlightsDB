@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-IAHQGOH\luki2"
   DTS:DTSID="{7AC80F97-07AF-4AAD-BE0E-2E2ADB91A7DB}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.1300.375"
+  DTS:LastModifiedProductVersion="15.0.1300.371"
   DTS:LocaleID="1045"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{63F7ED9E-E79E-45FB-8729-54DECF82F0D7}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{F0F896E4-AB29-4BB7-995C-4382E5998C21}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -581,7 +581,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{D1F7F104-6329-40DF-B127-DB9B8BBF12C2}"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE [DimPlane]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="ALTER TABLE [FactFlights] DROP CONSTRAINT FK_DimPlane&#xA;GO&#xA;&#xA;TRUNCATE TABLE [DimPlane];&#xA;&#xA;GO&#xA;ALTER TABLE [dbo].[FactFlights]  WITH CHECK ADD  CONSTRAINT [FK_DimPlane] FOREIGN KEY([PlaneId])&#xA;REFERENCES [dbo].[DimPlane] ([Id])" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -616,6 +616,10 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="172,42"
+          Id="Package\Create unknow Plane"
+          TopLeft="493,318" />
+        <NodeLayout
           Size="151,42"
           Id="Package\Data Flow Task"
           TopLeft="505,216" />
@@ -645,10 +649,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="172,42"
-          Id="Package\Create unknow Plane"
-          TopLeft="493,318" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="579.75,258">
