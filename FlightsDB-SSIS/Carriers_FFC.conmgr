@@ -12,7 +12,7 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x003C_none_x003E_"
       DTS:CodePage="1252"
-      DTS:ConnectionString="C:\Users\luki2\Documents\70767DataWarehouse\Lesson00 Projects\Project05 FlightsDB\carriers.csv">
+      DTS:ConnectionString="E:\Flight\carriers.csv">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -21,7 +21,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Code"
-          DTS:DTSID="{E844A1E7-EF0F-4573-9C65-0F33B676D982}"
+          DTS:DTSID="{1F4A5E38-BEE4-4C89-89B0-41C9916EA1B6}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -30,7 +30,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Description"
-          DTS:DTSID="{1EFB4DD7-FBB0-4A02-BBE1-E235D6AF1C8E}"
+          DTS:DTSID="{BEAD009C-541A-4041-84C9-F15112754CBE}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

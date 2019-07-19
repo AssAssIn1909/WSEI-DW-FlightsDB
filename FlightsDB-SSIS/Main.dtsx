@@ -7,24 +7,24 @@
   DTS:CreatorName="DESKTOP-IAHQGOH\luki2"
   DTS:DTSID="{7056E10E-53B9-473A-BFCA-A2C13F835E96}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.1300.375"
+  DTS:LastModifiedProductVersion="15.0.1300.371"
   DTS:LocaleID="1045"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{361F7F9C-121F-43E0-8284-7B15A37399E6}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{B2D74976-AB79-41F5-88AE-D2AD0DC0CCD9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Execute Package Task"
+      DTS:refId="Package\AirportsDim"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
       DTS:DTSID="{D6BA0B3A-FBFD-402E-B737-B93676F253C4}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Package Task"
+      DTS:ObjectName="AirportsDim"
       DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -35,13 +35,13 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Execute Package Task 1"
+      DTS:refId="Package\CarrierDim"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
       DTS:DTSID="{DFDA2AA4-2C70-4D2A-8FA9-A3953F121CAB}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Package Task 1"
+      DTS:ObjectName="CarrierDim"
       DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -52,13 +52,30 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Execute Package Task 2"
+      DTS:refId="Package\ImportFact"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{7AFA04B2-5C17-43F7-BB10-A7DABE1C502D}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ImportFact"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>ImportFact.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\PlaneDataDim"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
       DTS:DTSID="{03D3C399-0868-4031-998C-18A80914C182}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Package Task 2"
+      DTS:ObjectName="PlaneDataDim"
       DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -74,18 +91,26 @@
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
       DTS:DTSID="{2CD79216-E505-4468-BB98-F17741A0CA33}"
-      DTS:From="Package\Execute Package Task"
+      DTS:From="Package\AirportsDim"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Execute Package Task 1" />
+      DTS:To="Package\CarrierDim" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
       DTS:DTSID="{A045F538-F74B-4B5C-AC0B-8B67C43EF008}"
-      DTS:From="Package\Execute Package Task 1"
+      DTS:From="Package\CarrierDim"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Execute Package Task 2" />
+      DTS:To="Package\PlaneDataDim" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{1292E31A-E6E7-434D-9413-B7F1C35ECF41}"
+      DTS:From="Package\PlaneDataDim"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\ImportFact" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -100,26 +125,26 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="183,42"
-          Id="Package\Execute Package Task"
+          Size="134,42"
+          Id="Package\AirportsDim"
           TopLeft="414,106" />
         <NodeLayout
-          Size="192,42"
-          Id="Package\Execute Package Task 1"
+          Size="129,42"
+          Id="Package\CarrierDim"
           TopLeft="451,230" />
         <NodeLayout
-          Size="192,42"
-          Id="Package\Execute Package Task 2"
+          Size="145,42"
+          Id="Package\PlaneDataDim"
           TopLeft="500,307" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="505.5,148">
+          TopLeft="481,148">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="41.5,82"
+              EndConnector="34.5,82"
               Start="0,0"
-              End="41.5,74.5">
+              End="34.5,74.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -130,13 +155,13 @@
                     Point2="0,41"
                     Point3="4,41" />
                   <mssgle:LineSegment
-                    End="37.5,41" />
+                    End="30.5,41" />
                   <mssgle:CubicBezierSegment
-                    Point1="37.5,41"
-                    Point2="41.5,41"
-                    Point3="41.5,45" />
+                    Point1="30.5,41"
+                    Point2="34.5,41"
+                    Point3="34.5,45" />
                   <mssgle:LineSegment
-                    End="41.5,74.5" />
+                    End="34.5,74.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -147,13 +172,13 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="547,272">
+          TopLeft="515.5,272">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="49,35"
+              EndConnector="57,35"
               Start="0,0"
-              End="49,27.5">
+              End="57,27.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -164,13 +189,51 @@
                     Point2="0,17.5"
                     Point3="4,17.5" />
                   <mssgle:LineSegment
-                    End="45,17.5" />
+                    End="53,17.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="45,17.5"
-                    Point2="49,17.5"
-                    Point3="49,21.5" />
+                    Point1="53,17.5"
+                    Point2="57,17.5"
+                    Point3="57,21.5" />
                   <mssgle:LineSegment
-                    End="49,27.5" />
+                    End="57,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="131,42"
+          Id="Package\ImportFact"
+          TopLeft="559,399" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="572.5,349">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="52,50"
+              Start="0,0"
+              End="52,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21"
+                    Point2="0,25"
+                    Point3="4,25" />
+                  <mssgle:LineSegment
+                    End="48,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="48,25"
+                    Point2="52,25"
+                    Point3="52,29" />
+                  <mssgle:LineSegment
+                    End="52,42.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

@@ -69,6 +69,7 @@
     <Build Include="dbo\Stored Procedures\sp_createUnknownPlane.sql" />
     <Build Include="dbo\Stored Procedures\sp_createUnknownCarrier.sql" />
     <Build Include="dbo\Stored Procedures\sp_createUnknownAirport.sql" />
+    <Build Include="dbo\Tables\ErrorRows.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="PopulateDimDate.sql" />
